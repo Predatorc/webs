@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://v3.universite.standart.turkiye.gov.tr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://v3.universite.standart.turkiye.gov.tr" xmlns:intf="http://v3.universite.standart.turkiye.gov.tr" xmlns:tns1="http://bind.xml.javax" xmlns:tns2="http://datatype.xml.javax" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://v3.universite.standart.turkiye.gov.tr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xml.apache.org/xml-soap"/>
+   <import namespace="http://bind.xml.javax"/>
+   <import namespace="http://datatype.xml.javax"/>
+   <element name="main">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="args" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mainResponse">
+    <complexType/>
+   </element>
+   <element name="sertifikaSorgula">
+    <complexType>
+     <sequence>
+      <element name="sorgu" type="impl:SertifikaSorgulaG"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SorguParametreType">
+    <sequence>
+     <element name="ipAdresi" nillable="true" type="xsd:string"/>
+     <element name="kullaniciAdi" nillable="true" type="xsd:string"/>
+     <element name="kurumKodu" nillable="true" type="xsd:string"/>
+     <element name="sifre" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="KisiselSorgulamaGType">
+    <complexContent>
+     <extension base="impl:SorguParametreType">
+      <sequence>
+       <element name="tcKimlikNo" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <complexType name="SertifikaSorgulaG">
+    <complexContent>
+     <extension base="impl:KisiselSorgulamaGType">
+      <sequence/>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="sertifikaSorgulaResponse">
+    <complexType>
+     <sequence>
+      <element name="sertifikaSorgulaReturn" type="impl:SertifikaSorgulaCType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="IslemSonucType">
+    <sequence>
+     <element name="kurumKodu" nillable="true" type="xsd:string"/>
+     <element name="sonucAciklamasi" nillable="true" type="xsd:string"/>
+     <element name="sonucKodu" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="ArrayOfSertifikaListesi">
+    <sequence>
+     <element name="sertifika" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+   <complexType name="SertifikaSorgulaCType">
+    <complexContent>
+     <extension base="impl:IslemSonucType">
+      <sequence>
+       <element name="detayListesi" nillable="true" type="xsd:anyType"/>
+       <element name="sertifikaListesi" nillable="true" type="impl:ArrayOfSertifikaListesi"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="sertifikaDogrula">
+    <complexType>
+     <sequence>
+      <element name="sdogru" type="impl:BarkodluBelgeDogrulaGType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="BarkodluBelgeDogrulaGType">
+    <complexContent>
+     <extension base="impl:SorguParametreType">
+      <sequence>
+       <element name="barkodNo" nillable="true" type="xsd:string"/>
+       <element name="tcKimlikNo" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="sertifikaDogrulaResponse">
+    <complexType>
+     <sequence>
+      <element name="sertifikaDogrulaReturn" type="impl:BarkodluBelgeDogrulaCType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="BarkodluBelgeDogrulaCType">
+    <complexContent>
+     <extension base="impl:IslemSonucType">
+      <sequence>
+       <element name="ad" nillable="true" type="xsd:string"/>
+       <element name="belge" nillable="true" type="xsd:base64Binary"/>
+       <element name="belgeOlusturulmaTarihi" nillable="true" type="xsd:anyType"/>
+       <element name="detayListesi" nillable="true" type="tns1:JAXBElement"/>
+       <element name="soyad" nillable="true" type="xsd:string"/>
+       <element name="tcKimlikNo" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="sertifikaIndir">
+    <complexType>
+     <sequence>
+      <element name="sbelge" type="impl:SertifikaBelgeIndirGType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SertifikaBelgeIndirGType">
+    <complexContent>
+     <extension base="impl:KisiselSorgulamaGType">
+      <sequence>
+       <element name="dilKey" nillable="true" type="xsd:string"/>
+       <element name="sertifikaID" nillable="true" type="xsd:string"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+   <element name="sertifikaIndirResponse">
+    <complexType>
+     <sequence>
+      <element name="sertifikaIndirReturn" type="impl:SertifikaBelgeIndirCType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SertifikaBelgeIndirCType">
+    <complexContent>
+     <extension base="impl:IslemSonucType">
+      <sequence>
+       <element name="belge" nillable="true" type="xsd:base64Binary"/>
+       <element name="detayListesi" nillable="true" type="tns1:JAXBElement"/>
+      </sequence>
+     </extension>
+    </complexContent>
+   </complexType>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://xml.apache.org/xml-soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://v3.universite.standart.turkiye.gov.tr"/>
+   <import namespace="http://bind.xml.javax"/>
+   <import namespace="http://datatype.xml.javax"/>
+   <complexType name="Vector">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sertifikaSorgulaResponse">
+
+      <wsdl:part element="impl:sertifikaSorgulaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part element="impl:main" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+      <wsdl:part element="impl:mainResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sertifikaIndirRequest">
+
+      <wsdl:part element="impl:sertifikaIndir" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sertifikaSorgulaRequest">
+
+      <wsdl:part element="impl:sertifikaSorgula" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sertifikaDogrulaRequest">
+
+      <wsdl:part element="impl:sertifikaDogrula" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sertifikaDogrulaResponse">
+
+      <wsdl:part element="impl:sertifikaDogrulaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sertifikaIndirResponse">
+
+      <wsdl:part element="impl:sertifikaIndirResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SertifikaDogrulamaSorgu">
+
+      <wsdl:operation name="main">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaSorgula">
+
+         <wsdl:input message="impl:sertifikaSorgulaRequest" name="sertifikaSorgulaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sertifikaSorgulaResponse" name="sertifikaSorgulaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaDogrula">
+
+         <wsdl:input message="impl:sertifikaDogrulaRequest" name="sertifikaDogrulaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sertifikaDogrulaResponse" name="sertifikaDogrulaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaIndir">
+
+         <wsdl:input message="impl:sertifikaIndirRequest" name="sertifikaIndirRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sertifikaIndirResponse" name="sertifikaIndirResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SertifikaDogrulamaSorguSoapBinding" type="impl:SertifikaDogrulamaSorgu">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaSorgula">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sertifikaSorgulaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sertifikaSorgulaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaDogrula">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sertifikaDogrulaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sertifikaDogrulaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sertifikaIndir">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sertifikaIndirRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sertifikaIndirResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SertifikaDogrulamaSorguService">
+
+      <wsdl:port binding="impl:SertifikaDogrulamaSorguSoapBinding" name="SertifikaDogrulamaSorgu">
+
+         <wsdlsoap:address location="http://localhost:8080/v3/services/SertifikaDogrulamaSorgu"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
