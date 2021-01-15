@@ -9,16 +9,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for arrayOfSertifikaListesi complex type.
+ * <p>Java class for arrayOfDonemListesi complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="arrayOfSertifikaListesi">
+ * &lt;complexType name="arrayOfDonemListesi">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="sertifika" type="{http://standart.turkiye.gov.tr/universite/v3}sertifikaType" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="donemBilgisi" type="{http://standart.turkiye.gov.tr/universite/v3}donemType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,40 +28,40 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "arrayOfSertifikaListesi", propOrder = {
-    "sertifika"
+@XmlType(name = "arrayOfDonemListesi", propOrder = {
+    "donemBilgisi"
 })
-public class ArrayOfSertifikaListesi {
+public class ArrayOfDonemListesi {
 
-    protected List<SertifikaType> sertifika;
+    protected List<DonemType> donemBilgisi;
 
     /**
-     * Gets the value of the sertifika property.
+     * Gets the value of the donemBilgisi property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the sertifika property.
+     * This is why there is not a <CODE>set</CODE> method for the donemBilgisi property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSertifika().add(newItem);
+     *    getDonemBilgisi().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SertifikaType }
+     * {@link DonemType }
      * 
      * 
      */
-    public List<SertifikaType> getSertifika() {
-        if (sertifika == null) {
-            sertifika = new ArrayList<SertifikaType>();
+    public List<DonemType> getDonemBilgisi() {
+        if (donemBilgisi == null) {
+            donemBilgisi = new ArrayList<DonemType>();
         }
-        return this.sertifika;
+        return this.donemBilgisi;
     }
 
 }

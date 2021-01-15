@@ -8,19 +8,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for barkodluBelgeDogrulaGType complex type.
+ * <p>Java class for dilSorgula complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="barkodluBelgeDogrulaGType">
+ * &lt;complexType name="dilSorgula">
  *   &lt;complexContent>
- *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}sorguParametreType">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="tcKimlikNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="barkodNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="dilKey" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="dilValue" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -28,65 +28,63 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "barkodluBelgeDogrulaGType", propOrder = {
-    "tcKimlikNo",
-    "barkodNo"
+@XmlType(name = "dilSorgula", propOrder = {
+    "dilKey",
+    "dilValue"
 })
-public class BarkodluBelgeDogrulaGType
-    extends SorguParametreType
-{
+public class DilSorgula {
 
     @XmlElement(required = true)
-    protected String tcKimlikNo;
+    protected String dilKey;
     @XmlElement(required = true)
-    protected String barkodNo;
+    protected String dilValue;
 
     /**
-     * Gets the value of the tcKimlikNo property.
+     * Gets the value of the dilKey property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTcKimlikNo() {
-        return tcKimlikNo;
+    public String getDilKey() {
+        return dilKey;
     }
 
     /**
-     * Sets the value of the tcKimlikNo property.
+     * Sets the value of the dilKey property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTcKimlikNo(String value) {
-        this.tcKimlikNo = value;
+    public void setDilKey(String value) {
+        this.dilKey = value;
     }
 
     /**
-     * Gets the value of the barkodNo property.
+     * Gets the value of the dilValue property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBarkodNo() {
-        return barkodNo;
+    public String getDilValue() {
+        return dilValue;
     }
 
     /**
-     * Sets the value of the barkodNo property.
+     * Sets the value of the dilValue property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBarkodNo(String value) {
-        this.barkodNo = value;
+    public void setDilValue(String value) {
+        this.dilValue = value;
     }
 
 }

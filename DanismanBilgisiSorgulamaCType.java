@@ -6,26 +6,24 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Java class for barkodluBelgeDogrulaCType complex type.
+ * <p>Java class for danismanBilgisiSorgulamaCType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="barkodluBelgeDogrulaCType">
+ * &lt;complexType name="danismanBilgisiSorgulamaCType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}islemSonucType">
  *       &lt;sequence>
- *         &lt;element name="belge" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
- *         &lt;element name="tcKimlikNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="ad" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="soyad" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="belgeOlusturulmaTarihi" type="{http://www.w3.org/2001/XMLSchema}dateTime"/>
+ *         &lt;element name="danismanAdi" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="danismanSoyadi" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="danismanOfisi" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="danismanTelefon" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="danismanEposta" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="detayListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfDetailType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -36,148 +34,149 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "barkodluBelgeDogrulaCType", propOrder = {
-    "belge",
-    "tcKimlikNo",
-    "ad",
-    "soyad",
-    "belgeOlusturulmaTarihi",
+@XmlType(name = "danismanBilgisiSorgulamaCType", propOrder = {
+    "danismanAdi",
+    "danismanSoyadi",
+    "danismanOfisi",
+    "danismanTelefon",
+    "danismanEposta",
     "detayListesi"
 })
-public class BarkodluBelgeDogrulaCType
+public class DanismanBilgisiSorgulamaCType
     extends IslemSonucType
 {
 
     @XmlElement(required = true)
-    protected byte[] belge;
+    protected String danismanAdi;
     @XmlElement(required = true)
-    protected String tcKimlikNo;
+    protected String danismanSoyadi;
     @XmlElement(required = true)
-    protected String ad;
+    protected String danismanOfisi;
     @XmlElement(required = true)
-    protected String soyad;
+    protected String danismanTelefon;
     @XmlElement(required = true)
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar belgeOlusturulmaTarihi;
+    protected String danismanEposta;
     @XmlElementRef(name = "detayListesi", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDetailType> detayListesi;
 
     /**
-     * Gets the value of the belge property.
-     * 
-     * @return
-     *     possible object is
-     *     byte[]
-     */
-    public byte[] getBelge() {
-        return belge;
-    }
-
-    /**
-     * Sets the value of the belge property.
-     * 
-     * @param value
-     *     allowed object is
-     *     byte[]
-     */
-    public void setBelge(byte[] value) {
-        this.belge = value;
-    }
-
-    /**
-     * Gets the value of the tcKimlikNo property.
+     * Gets the value of the danismanAdi property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTcKimlikNo() {
-        return tcKimlikNo;
+    public String getDanismanAdi() {
+        return danismanAdi;
     }
 
     /**
-     * Sets the value of the tcKimlikNo property.
+     * Sets the value of the danismanAdi property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTcKimlikNo(String value) {
-        this.tcKimlikNo = value;
+    public void setDanismanAdi(String value) {
+        this.danismanAdi = value;
     }
 
     /**
-     * Gets the value of the ad property.
+     * Gets the value of the danismanSoyadi property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getAd() {
-        return ad;
+    public String getDanismanSoyadi() {
+        return danismanSoyadi;
     }
 
     /**
-     * Sets the value of the ad property.
+     * Sets the value of the danismanSoyadi property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setAd(String value) {
-        this.ad = value;
+    public void setDanismanSoyadi(String value) {
+        this.danismanSoyadi = value;
     }
 
     /**
-     * Gets the value of the soyad property.
+     * Gets the value of the danismanOfisi property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getSoyad() {
-        return soyad;
+    public String getDanismanOfisi() {
+        return danismanOfisi;
     }
 
     /**
-     * Sets the value of the soyad property.
+     * Sets the value of the danismanOfisi property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setSoyad(String value) {
-        this.soyad = value;
+    public void setDanismanOfisi(String value) {
+        this.danismanOfisi = value;
     }
 
     /**
-     * Gets the value of the belgeOlusturulmaTarihi property.
+     * Gets the value of the danismanTelefon property.
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public XMLGregorianCalendar getBelgeOlusturulmaTarihi() {
-        return belgeOlusturulmaTarihi;
+    public String getDanismanTelefon() {
+        return danismanTelefon;
     }
 
     /**
-     * Sets the value of the belgeOlusturulmaTarihi property.
+     * Sets the value of the danismanTelefon property.
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link String }
      *     
      */
-    public void setBelgeOlusturulmaTarihi(XMLGregorianCalendar value) {
-        this.belgeOlusturulmaTarihi = value;
+    public void setDanismanTelefon(String value) {
+        this.danismanTelefon = value;
+    }
+
+    /**
+     * Gets the value of the danismanEposta property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getDanismanEposta() {
+        return danismanEposta;
+    }
+
+    /**
+     * Sets the value of the danismanEposta property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setDanismanEposta(String value) {
+        this.danismanEposta = value;
     }
 
     /**

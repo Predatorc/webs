@@ -8,19 +8,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for barkodluBelgeDogrulaGType complex type.
+ * <p>Java class for dersSinavSonucType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="barkodluBelgeDogrulaGType">
+ * &lt;complexType name="dersSinavSonucType">
  *   &lt;complexContent>
- *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}sorguParametreType">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="tcKimlikNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="barkodNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="sinavAdi" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="sinavSonucu" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -28,65 +28,63 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "barkodluBelgeDogrulaGType", propOrder = {
-    "tcKimlikNo",
-    "barkodNo"
+@XmlType(name = "dersSinavSonucType", propOrder = {
+    "sinavAdi",
+    "sinavSonucu"
 })
-public class BarkodluBelgeDogrulaGType
-    extends SorguParametreType
-{
+public class DersSinavSonucType {
 
     @XmlElement(required = true)
-    protected String tcKimlikNo;
+    protected String sinavAdi;
     @XmlElement(required = true)
-    protected String barkodNo;
+    protected String sinavSonucu;
 
     /**
-     * Gets the value of the tcKimlikNo property.
+     * Gets the value of the sinavAdi property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTcKimlikNo() {
-        return tcKimlikNo;
+    public String getSinavAdi() {
+        return sinavAdi;
     }
 
     /**
-     * Sets the value of the tcKimlikNo property.
+     * Sets the value of the sinavAdi property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTcKimlikNo(String value) {
-        this.tcKimlikNo = value;
+    public void setSinavAdi(String value) {
+        this.sinavAdi = value;
     }
 
     /**
-     * Gets the value of the barkodNo property.
+     * Gets the value of the sinavSonucu property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBarkodNo() {
-        return barkodNo;
+    public String getSinavSonucu() {
+        return sinavSonucu;
     }
 
     /**
-     * Sets the value of the barkodNo property.
+     * Sets the value of the sinavSonucu property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBarkodNo(String value) {
-        this.barkodNo = value;
+    public void setSinavSonucu(String value) {
+        this.sinavSonucu = value;
     }
 
 }

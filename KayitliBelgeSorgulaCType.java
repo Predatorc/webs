@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sertifikaBelgeIndirCType complex type.
+ * <p>Java class for KayitliBelgeSorgulaCType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="sertifikaBelgeIndirCType">
+ * &lt;complexType name="KayitliBelgeSorgulaCType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}islemSonucType">
  *       &lt;sequence>
- *         &lt;element name="belge" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
+ *         &lt;element name="kayitliBelgeListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfKayitliBelge"/>
  *         &lt;element name="detayListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfDetailType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -30,39 +30,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "sertifikaBelgeIndirCType", propOrder = {
-    "belge",
+@XmlType(name = "KayitliBelgeSorgulaCType", propOrder = {
+    "kayitliBelgeListesi",
     "detayListesi"
 })
-public class SertifikaBelgeIndirCType
+public class KayitliBelgeSorgulaCType
     extends IslemSonucType
 {
 
     @XmlElement(required = true)
-    protected byte[] belge;
+    protected ArrayOfKayitliBelge kayitliBelgeListesi;
     @XmlElementRef(name = "detayListesi", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDetailType> detayListesi;
 
     /**
-     * Gets the value of the belge property.
+     * Gets the value of the kayitliBelgeListesi property.
      * 
      * @return
      *     possible object is
-     *     byte[]
+     *     {@link ArrayOfKayitliBelge }
+     *     
      */
-    public byte[] getBelge() {
-        return belge;
+    public ArrayOfKayitliBelge getKayitliBelgeListesi() {
+        return kayitliBelgeListesi;
     }
 
     /**
-     * Sets the value of the belge property.
+     * Sets the value of the kayitliBelgeListesi property.
      * 
      * @param value
      *     allowed object is
-     *     byte[]
+     *     {@link ArrayOfKayitliBelge }
+     *     
      */
-    public void setBelge(byte[] value) {
-        this.belge = value;
+    public void setKayitliBelgeListesi(ArrayOfKayitliBelge value) {
+        this.kayitliBelgeListesi = value;
     }
 
     /**

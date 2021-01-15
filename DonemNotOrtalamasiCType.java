@@ -10,16 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sertifikaBelgeIndirCType complex type.
+ * <p>Java class for donemNotOrtalamasiCType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="sertifikaBelgeIndirCType">
+ * &lt;complexType name="donemNotOrtalamasiCType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}islemSonucType">
  *       &lt;sequence>
- *         &lt;element name="belge" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
+ *         &lt;element name="donemNotListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfDonemNotListesi"/>
  *         &lt;element name="detayListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfDetailType" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/extension>
@@ -30,39 +30,41 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "sertifikaBelgeIndirCType", propOrder = {
-    "belge",
+@XmlType(name = "donemNotOrtalamasiCType", propOrder = {
+    "donemNotListesi",
     "detayListesi"
 })
-public class SertifikaBelgeIndirCType
+public class DonemNotOrtalamasiCType
     extends IslemSonucType
 {
 
     @XmlElement(required = true)
-    protected byte[] belge;
+    protected ArrayOfDonemNotListesi donemNotListesi;
     @XmlElementRef(name = "detayListesi", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDetailType> detayListesi;
 
     /**
-     * Gets the value of the belge property.
+     * Gets the value of the donemNotListesi property.
      * 
      * @return
      *     possible object is
-     *     byte[]
+     *     {@link ArrayOfDonemNotListesi }
+     *     
      */
-    public byte[] getBelge() {
-        return belge;
+    public ArrayOfDonemNotListesi getDonemNotListesi() {
+        return donemNotListesi;
     }
 
     /**
-     * Sets the value of the belge property.
+     * Sets the value of the donemNotListesi property.
      * 
      * @param value
      *     allowed object is
-     *     byte[]
+     *     {@link ArrayOfDonemNotListesi }
+     *     
      */
-    public void setBelge(byte[] value) {
-        this.belge = value;
+    public void setDonemNotListesi(ArrayOfDonemNotListesi value) {
+        this.donemNotListesi = value;
     }
 
     /**

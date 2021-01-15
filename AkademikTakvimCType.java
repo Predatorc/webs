@@ -10,15 +10,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sertifikaBelgeIndirCType complex type.
+ * <p>Java class for akademikTakvimCType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="sertifikaBelgeIndirCType">
+ * &lt;complexType name="akademikTakvimCType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}islemSonucType">
  *       &lt;sequence>
+ *         &lt;element name="genelAciklama" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="belge" type="{http://www.w3.org/2001/XMLSchema}base64Binary"/>
  *         &lt;element name="detayListesi" type="{http://standart.turkiye.gov.tr/universite/v3}arrayOfDetailType" minOccurs="0"/>
  *       &lt;/sequence>
@@ -30,18 +31,45 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "sertifikaBelgeIndirCType", propOrder = {
+@XmlType(name = "akademikTakvimCType", propOrder = {
+    "genelAciklama",
     "belge",
     "detayListesi"
 })
-public class SertifikaBelgeIndirCType
+public class AkademikTakvimCType
     extends IslemSonucType
 {
 
     @XmlElement(required = true)
+    protected String genelAciklama;
+    @XmlElement(required = true)
     protected byte[] belge;
     @XmlElementRef(name = "detayListesi", type = JAXBElement.class, required = false)
     protected JAXBElement<ArrayOfDetailType> detayListesi;
+
+    /**
+     * Gets the value of the genelAciklama property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getGenelAciklama() {
+        return genelAciklama;
+    }
+
+    /**
+     * Sets the value of the genelAciklama property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setGenelAciklama(String value) {
+        this.genelAciklama = value;
+    }
 
     /**
      * Gets the value of the belge property.

@@ -10,12 +10,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for sertifikaBelgeIndirCType complex type.
+ * <p>Java class for universiteBelgeOlusturCType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="sertifikaBelgeIndirCType">
+ * &lt;complexType name="universiteBelgeOlusturCType">
  *   &lt;complexContent>
  *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}islemSonucType">
  *       &lt;sequence>
@@ -30,11 +30,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "sertifikaBelgeIndirCType", propOrder = {
+@XmlType(name = "universiteBelgeOlusturCType", propOrder = {
     "belge",
     "detayListesi"
 })
-public class SertifikaBelgeIndirCType
+public class UniversiteBelgeOlusturCType
     extends IslemSonucType
 {
 

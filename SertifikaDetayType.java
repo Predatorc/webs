@@ -8,19 +8,19 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for barkodluBelgeDogrulaGType complex type.
+ * <p>Java class for sertifikaDetayType complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="barkodluBelgeDogrulaGType">
+ * &lt;complexType name="sertifikaDetayType">
  *   &lt;complexContent>
- *     &lt;extension base="{http://standart.turkiye.gov.tr/universite/v3}sorguParametreType">
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="tcKimlikNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="barkodNo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="baslik" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="aciklama" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
- *     &lt;/extension>
+ *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -28,65 +28,63 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "barkodluBelgeDogrulaGType", propOrder = {
-    "tcKimlikNo",
-    "barkodNo"
+@XmlType(name = "sertifikaDetayType", propOrder = {
+    "baslik",
+    "aciklama"
 })
-public class BarkodluBelgeDogrulaGType
-    extends SorguParametreType
-{
+public class SertifikaDetayType {
 
     @XmlElement(required = true)
-    protected String tcKimlikNo;
+    protected String baslik;
     @XmlElement(required = true)
-    protected String barkodNo;
+    protected String aciklama;
 
     /**
-     * Gets the value of the tcKimlikNo property.
+     * Gets the value of the baslik property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getTcKimlikNo() {
-        return tcKimlikNo;
+    public String getBaslik() {
+        return baslik;
     }
 
     /**
-     * Sets the value of the tcKimlikNo property.
+     * Sets the value of the baslik property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setTcKimlikNo(String value) {
-        this.tcKimlikNo = value;
+    public void setBaslik(String value) {
+        this.baslik = value;
     }
 
     /**
-     * Gets the value of the barkodNo property.
+     * Gets the value of the aciklama property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getBarkodNo() {
-        return barkodNo;
+    public String getAciklama() {
+        return aciklama;
     }
 
     /**
-     * Sets the value of the barkodNo property.
+     * Sets the value of the aciklama property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setBarkodNo(String value) {
-        this.barkodNo = value;
+    public void setAciklama(String value) {
+        this.aciklama = value;
     }
 
 }
